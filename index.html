@@ -1,33 +1,71 @@
 ---
 layout: default
 title: Home
-description: Personal website of Shi Junjie.
+description: Personal research blog of Shi Junjie.
 ---
-<section class="hero section-shell">
-  <p class="eyebrow">Personal Website</p>
-  <h1>Shi Junjie</h1>
-  <p class="hero-subtitle">Research Blog</p>
+<section class="profile">
+  <div class="avatar" aria-hidden="true">
+    {% assign avatar_path = '/assets/img/avatar.jpg' %}
+    {% assign avatar_file = site.static_files | where: "path", avatar_path | first %}
+    {% if avatar_file %}
+      <img src="{{ avatar_path | relative_url }}" alt="">
+    {% else %}
+      <span>SJ</span>
+    {% endif %}
+  </div>
+
+  <div class="profile-copy">
+    <p class="eyebrow">Research Blog</p>
+    <h1>Shi Junjie</h1>
+    <p class="lead">Computer Vision · Multi-Object Tracking · Sports Analytics</p>
+    <div class="link-row" aria-label="Profile links">
+      <a href="https://github.com/shijunjie07">GitHub</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/research/' | relative_url }}">Research</a>
+    </div>
+  </div>
 </section>
 
-<section class="section-shell home-grid" aria-label="Site sections">
-  <a class="section-card" href="{{ '/research/' | relative_url }}">
-    <span>01</span>
-    <h2>Research</h2>
-  </a>
-  <a class="section-card" href="{{ '/blog/' | relative_url }}">
-    <span>02</span>
-    <h2>Blog</h2>
-  </a>
-  <a class="section-card" href="{{ '/notes/' | relative_url }}">
-    <span>03</span>
-    <h2>Notes</h2>
-  </a>
-  <a class="section-card" href="{{ '/projects/' | relative_url }}">
-    <span>04</span>
-    <h2>Projects</h2>
-  </a>
-  <a class="section-card" href="{{ '/about/' | relative_url }}">
-    <span>05</span>
-    <h2>About</h2>
-  </a>
+<section class="home-section">
+  <h2>About</h2>
+  <p>I write about multi-object tracking, computer vision, sports analytics, and research tools.</p>
+</section>
+
+<section class="home-section">
+  <h2>Research</h2>
+  <p>Multi-Object Tracking · Computer Vision · Sports Analytics · Online MOT · Data Association</p>
+</section>
+
+<section class="home-section">
+  <div class="section-heading">
+    <h2>Featured Posts</h2>
+    <a href="{{ '/blog/' | relative_url }}">All posts</a>
+  </div>
+
+  {% if site.posts.size > 0 %}
+    <div class="post-list compact">
+      {% for post in site.posts limit:5 %}
+        <article class="post-item">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+          {% if post.summary %}
+            <p>{{ post.summary }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="muted">No published posts yet.</p>
+  {% endif %}
+</section>
+
+<section class="home-section">
+  <h2>Other Links</h2>
+  <nav class="link-grid" aria-label="Other links">
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/research/' | relative_url }}">Research</a>
+    <a href="{{ '/notes/' | relative_url }}">Notes</a>
+    <a href="{{ '/projects/' | relative_url }}">Projects</a>
+    <a href="https://github.com/shijunjie07">GitHub</a>
+  </nav>
 </section>

@@ -2,22 +2,26 @@
 layout: page
 title: Blog
 permalink: /blog/
-kicker: 01
 ---
 {% if site.posts.size > 0 %}
   <div class="post-list">
     {% for post in site.posts %}
-      <article class="post-card">
-        <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <article class="post-item">
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
         {% if post.summary %}
           <p>{{ post.summary }}</p>
+        {% endif %}
+        {% if post.categories and post.categories.size > 0 %}
+          <div class="tag-list" aria-label="Categories">
+            {% for category in post.categories %}
+              <span>{{ category }}</span>
+            {% endfor %}
+          </div>
         {% endif %}
       </article>
     {% endfor %}
   </div>
 {% else %}
-  <div class="empty-state">
-    <p>No published posts yet.</p>
-  </div>
+  <p class="muted">No published posts yet.</p>
 {% endif %}

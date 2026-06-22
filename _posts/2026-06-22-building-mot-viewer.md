@@ -6,15 +6,6 @@ summary: "A short note on why I built MOT Viewer, a lightweight browser-based to
 categories: [research, tools, multi-object-tracking]
 ---
 
----
-
-layout: post
-title: "Building MOT Viewer: A Lightweight Tool for Inspecting Multi-Object Tracking Datasets"
-date: 2026-06-22 00:00:00 +0800
-summary: "A short note on why I built MOT Viewer, a lightweight browser-based tool for inspecting MOT-style datasets, annotations, bounding boxes, and track identities."
-categories: [research, tools, multi-object-tracking]
-----------------------------------------------------
-
 # Building MOT Viewer: A Lightweight Tool for Inspecting Multi-Object Tracking Datasets
 
 When working on multi-object tracking, I often need to inspect datasets before training, testing, or debugging a tracker. A dataset may look correct from its folder structure, but small problems can still exist in the annotations, frame ordering, sequence metadata, bounding box alignment, or track identity consistency.

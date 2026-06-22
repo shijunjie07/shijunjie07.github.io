@@ -27,7 +27,6 @@ Jekyll-based personal research blog for GitHub Pages.
 │   └── post-template.md
 └── assets/
     ├── css/styles.css
-    ├── js/script.js
     └── img/
 ```
 
@@ -82,7 +81,7 @@ For the repository `shijunjie07.github.io`:
 1. Place these files in the repository root.
 2. Go to `Settings → Pages`.
 3. Use `Deploy from a branch`.
-4. Select `main` and `/ root`.
+4. Select `master` and `/ root`.
 5. Set custom domain to `shijunjie.tech`.
 
 The included `CNAME` file already contains:
