@@ -1,0 +1,12 @@
+title: Shi Junjie
+author: Shi Junjie
+description: Research blog and personal website.
+url: "https://shijunjie.tech"
+baseurl: ""
+lang: en
+permalink: /blog/:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+plugins: []

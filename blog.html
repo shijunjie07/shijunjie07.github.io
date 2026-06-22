@@ -1,0 +1,23 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+kicker: 01
+---
+{% if site.posts.size > 0 %}
+  <div class="post-list">
+    {% for post in site.posts %}
+      <article class="post-card">
+        <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.summary %}
+          <p>{{ post.summary }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="empty-state">
+    <p>No published posts yet.</p>
+  </div>
+{% endif %}
