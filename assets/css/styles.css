@@ -273,6 +273,45 @@ h3 {
   color: var(--muted);
 }
 
+.contact-list {
+  display: grid;
+  gap: 14px;
+  max-width: 680px;
+}
+
+.contact-card {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel-soft);
+}
+
+.contact-card:hover {
+  border-color: rgba(142, 182, 217, 0.44);
+  background: var(--panel);
+}
+
+.contact-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-card a {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+  color: var(--accent);
+}
+
 .page-header {
   max-width: var(--content-width);
   padding-bottom: 28px;

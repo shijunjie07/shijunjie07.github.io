@@ -10,6 +10,7 @@ Jekyll-based personal research blog for GitHub Pages.
 ├── CNAME
 ├── index.html
 ├── blog.html
+├── contact.html
 ├── research.html
 ├── notes.html
 ├── projects.html
