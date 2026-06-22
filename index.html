@@ -3,7 +3,7 @@ layout: default
 title: Home
 description: Minimal personal research blog of Shi Junjie.
 ---
-<section class="profile-hero">
+<section class="hero">
   <div class="profile-photo" aria-hidden="true">
     {% assign profile_jpg_path = '/assets/img/profile.jpg' %}
     {% assign profile_png_path = '/assets/img/profile.png' %}
@@ -21,13 +21,18 @@ description: Minimal personal research blog of Shi Junjie.
   <div class="profile-intro">
     <p class="eyebrow">Research Blog</p>
     <h1>Shi Junjie</h1>
-    <p class="lead">Computer Vision · Multi-Object Tracking · Sports Analytics</p>
+    <p class="lead">Master's Research Student · Computer Vision · Multi-Object Tracking</p>
     <div class="button-row" aria-label="Profile links">
       <a class="button" href="{{ '/blog/' | relative_url }}">Blog</a>
       <a class="button" href="https://github.com/shijunjie07">GitHub</a>
       <a class="button" href="{{ '/contact/' | relative_url }}">Contact Me</a>
     </div>
   </div>
+</section>
+
+<section class="about-section">
+  <h2>About</h2>
+  <p>I am a Master’s research student at Universiti Malaya, focusing on computer vision and multi-object tracking. My research explores online MOT and data association for sports video, while my broader interests include sports video understanding, sports analytics, and building useful AI tools for research.</p>
 </section>
 
 <section class="home-section" id="blog">
@@ -38,7 +43,7 @@ description: Minimal personal research blog of Shi Junjie.
 
   {% if site.posts.size > 0 %}
     <div class="post-grid">
-      {% for post in site.posts %}
+      {% for post in site.posts limit:6 %}
         <article class="post-card">
           <a class="post-card-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">
             <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
@@ -60,11 +65,4 @@ description: Minimal personal research blog of Shi Junjie.
   {% else %}
     <p class="empty-message">No published posts yet.</p>
   {% endif %}
-</section>
-
-<section class="home-section contact-section">
-  <h2>Contact Me</h2>
-  <div class="button-row" aria-label="Contact links">
-    <a class="button" href="{{ '/contact/' | relative_url }}">Contact Me</a>
-  </div>
 </section>
