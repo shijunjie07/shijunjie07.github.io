@@ -80,16 +80,6 @@ frame,id,x,y,w,h,confidence,class,unused
 
 For visualization, the most important fields are the frame index, object identity, and bounding box coordinates.
 
-## Why this matters for my research
-
-My research focuses on online multi-object tracking, especially data association under uncertainty. In this area, understanding the dataset is not just a preprocessing step. It directly affects how tracking errors are interpreted.
-
-For example, when an identity switch happens, I need to know whether the problem comes from the tracker, the detector, the motion model, the appearance cue, or the annotation itself. A visual inspection tool helps me separate dataset issues from algorithmic issues.
-
-This is especially useful in sports tracking scenarios, where players often wear similar uniforms, move quickly, overlap with each other, and create difficult association cases. Before testing a tracker on such data, I need to make sure the annotations and frame sequences are correct.
-
-MOT Viewer helps support that workflow.
-
 ## Current status
 
 The current version is intentionally lightweight. It is not meant to be a full annotation platform or a replacement for advanced labeling tools. Instead, it is a practical research utility for quickly checking MOT-style datasets.
