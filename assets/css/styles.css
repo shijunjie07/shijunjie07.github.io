@@ -136,35 +136,79 @@ a:hover {
   padding: 6px 0;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .theme-toggle {
-  border: 0;
-  background: transparent;
+  position: relative;
+  width: 58px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
   color: var(--muted-text);
   cursor: pointer;
-  font: inherit;
-  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: background 160ms ease, border-color 160ms ease;
 }
 
 .theme-toggle:hover {
-  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.theme-toggle-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.theme-toggle-knob {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text);
+  transition: transform 160ms ease;
+}
+
+[data-theme="dark"] .theme-toggle-knob {
+  transform: translateX(28px);
 }
 
 .content-shell {
-  padding: 50px 0 72px;
+  padding: 38px 0 72px;
 }
 
 .hero {
-  max-width: 880px;
-  margin: 56px auto 70px;
+  max-width: 900px;
+  margin: 42px auto 52px;
   display: grid;
-  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
-  gap: clamp(34px, 7vw, 64px);
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: clamp(30px, 6vw, 56px);
   align-items: center;
 }
 
 .profile-photo {
-  width: clamp(200px, 24vw, 260px);
-  height: clamp(200px, 24vw, 260px);
+  width: clamp(180px, 22vw, 240px);
+  height: clamp(180px, 22vw, 240px);
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -214,7 +258,7 @@ h3 {
 
 h1 {
   margin-bottom: 14px;
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2.8rem, 7vw, 4.6rem);
 }
 
 h2 {
@@ -269,7 +313,7 @@ h3 {
 }
 
 .about-section {
-  margin-bottom: 70px;
+  margin-bottom: 48px;
 }
 
 .about-section p {
@@ -278,7 +322,7 @@ h3 {
 }
 
 .home-section {
-  padding-top: 34px;
+  padding-top: 28px;
   border-top: 1px solid var(--border);
 }
 
@@ -533,15 +577,15 @@ h3 {
 
   .hero {
     grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 42px;
-    margin-bottom: 58px;
+    gap: 26px;
+    margin-top: 34px;
+    margin-bottom: 44px;
     text-align: center;
   }
 
   .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 164px;
+    height: 164px;
     margin: 0 auto;
   }
 
@@ -574,11 +618,11 @@ h3 {
   }
 
   .content-shell {
-    padding-top: 34px;
+    padding-top: 28px;
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.55rem;
   }
 
   .post-grid,

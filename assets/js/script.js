@@ -27,6 +27,14 @@
     if (label) {
       label.textContent = nextTheme === "dark" ? "Light" : "Dark";
     }
+
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", String(nextTheme === "dark"));
+      toggle.setAttribute(
+        "aria-label",
+        nextTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+    }
   }
 
   applyTheme(getSavedTheme());
