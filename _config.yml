@@ -10,3 +10,6 @@ kramdown:
   input: GFM
   hard_wrap: false
 plugins: []
+
+future: true
+timezone: Asia/Kuala_Lumpur
