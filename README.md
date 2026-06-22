@@ -28,7 +28,14 @@ Jekyll-based personal research blog for GitHub Pages.
 └── assets/
     ├── css/styles.css
     └── img/
+        ├── profile.jpg
+        ├── profile.png
+        └── ...
 ```
+
+## Profile image
+
+The homepage prefers `assets/img/profile.jpg`. If that file is not present, it falls back to `assets/img/profile.png`, then to the `SJ` initials placeholder.
 
 ## Publish a blog post
 

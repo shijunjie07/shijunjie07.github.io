@@ -1,71 +1,71 @@
 ---
 layout: default
 title: Home
-description: Personal research blog of Shi Junjie.
+description: Minimal personal research blog of Shi Junjie.
 ---
-<section class="profile">
-  <div class="avatar" aria-hidden="true">
-    {% assign avatar_path = '/assets/img/avatar.jpg' %}
-    {% assign avatar_file = site.static_files | where: "path", avatar_path | first %}
-    {% if avatar_file %}
-      <img src="{{ avatar_path | relative_url }}" alt="">
+<section class="profile-hero">
+  <div class="profile-photo" aria-hidden="true">
+    {% assign profile_jpg_path = '/assets/img/profile.jpg' %}
+    {% assign profile_png_path = '/assets/img/profile.png' %}
+    {% assign profile_jpg = site.static_files | where: "path", profile_jpg_path | first %}
+    {% assign profile_png = site.static_files | where: "path", profile_png_path | first %}
+    {% if profile_jpg %}
+      <img src="{{ profile_jpg_path | relative_url }}" alt="">
+    {% elsif profile_png %}
+      <img src="{{ profile_png_path | relative_url }}" alt="">
     {% else %}
       <span>SJ</span>
     {% endif %}
   </div>
 
-  <div class="profile-copy">
+  <div class="profile-intro">
     <p class="eyebrow">Research Blog</p>
     <h1>Shi Junjie</h1>
     <p class="lead">Computer Vision · Multi-Object Tracking · Sports Analytics</p>
-    <div class="link-row" aria-label="Profile links">
-      <a href="https://github.com/shijunjie07">GitHub</a>
-      <a href="{{ '/blog/' | relative_url }}">Blog</a>
-      <a href="{{ '/research/' | relative_url }}">Research</a>
+    <div class="button-row" aria-label="Profile links">
+      <a class="button" href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a class="button" href="https://github.com/shijunjie07">GitHub</a>
+      <a class="button" href="mailto:your-email@example.com">Contact Me <span>replace email</span></a>
     </div>
   </div>
 </section>
 
-<section class="home-section">
-  <h2>About</h2>
-  <p>I write about multi-object tracking, computer vision, sports analytics, and research tools.</p>
-</section>
-
-<section class="home-section">
-  <h2>Research</h2>
-  <p>Multi-Object Tracking · Computer Vision · Sports Analytics · Online MOT · Data Association</p>
-</section>
-
-<section class="home-section">
+<section class="home-section" id="blog">
   <div class="section-heading">
-    <h2>Featured Posts</h2>
-    <a href="{{ '/blog/' | relative_url }}">All posts</a>
+    <h2>Blog</h2>
+    <a href="{{ '/blog/' | relative_url }}">View all</a>
   </div>
 
   {% if site.posts.size > 0 %}
-    <div class="post-list compact">
-      {% for post in site.posts limit:5 %}
-        <article class="post-item">
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-          {% if post.summary %}
-            <p>{{ post.summary }}</p>
-          {% endif %}
+    <div class="post-grid">
+      {% for post in site.posts %}
+        <article class="post-card">
+          <a class="post-card-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">
+            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+            <h3>{{ post.title }}</h3>
+            {% if post.summary %}
+              <p>{{ post.summary }}</p>
+            {% endif %}
+            {% if post.categories and post.categories.size > 0 %}
+              <div class="tag-list" aria-label="Categories">
+                {% for category in post.categories %}
+                  <span>{{ category }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </a>
         </article>
       {% endfor %}
     </div>
   {% else %}
-    <p class="muted">No published posts yet.</p>
+    <p class="empty-message">No published posts yet.</p>
   {% endif %}
 </section>
 
-<section class="home-section">
-  <h2>Other Links</h2>
-  <nav class="link-grid" aria-label="Other links">
-    <a href="{{ '/blog/' | relative_url }}">Blog</a>
-    <a href="{{ '/research/' | relative_url }}">Research</a>
-    <a href="{{ '/notes/' | relative_url }}">Notes</a>
-    <a href="{{ '/projects/' | relative_url }}">Projects</a>
-    <a href="https://github.com/shijunjie07">GitHub</a>
-  </nav>
+<section class="home-section contact-section" id="contact">
+  <h2>Contact Me</h2>
+  <div class="button-row" aria-label="Contact links">
+    <a class="button" href="https://github.com/shijunjie07">GitHub</a>
+    <a class="button" href="mailto:your-email@example.com">Email <span>replace email</span></a>
+  </div>
 </section>
